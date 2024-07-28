@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <form method="post" action="/listing/<%=list._id %>/edit?_method=PUT" class="col-12 needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="row">       
+            <div class="col-8 offset-2">
+                <h1 class="">Edit your listing</h1>
+                <div class="mb-3">
+                    <label for="title" class="form-label fw-bold">Title</label>
+                    <input type="text" name="listing[title]" placeholder="Enter title" id="title" value="<%=list.title %>" class="form-control" required>
+                    <div class="valid-feedback">Title looks good</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-bold">Description</label>
+                    <textarea name="listing[description]" id="description" placeholder="Enter description" cols="30" rows="" id="description" class="form-control" required><%=list.description %></textarea>        
+                    <div class="invalid-feedback">please enter short description</div>
+                </div>
+                <div class="mb-3">
+                    <img
+                        src="<%=originalImageUrl %>"
+                        class="img-fluid rounded-top"
+                        alt=""
+                    />
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label fw-bold">Upload new image</label>
+                    <input type="file" name="listing[image]" placeholder="Enter img URL" id="image"  class="form-control">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label fw-bold" >Price</label>
+                        <input type="text" name="listing[price]" placeholder="Enter price" id="price" value="<%=list.price %>" class="form-control" required>
+                        <div class="invalid-feedback">price should be valid</div> 
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label fw-bold">Country</label>
+                        <input type="text" name="listing[country]" placeholder="Enter country" id="country" value="<%=list.country %>" class="form-control"  required>
+                        <div class="invalid-feedback">please enter valid country</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-6">
+                        <label for="location" class="form-label fw-bold">Location</label>
+                        <input type="text" name="listing[location]" placeholder="Enter location" id="location" value="<%=list.location %>" class="form-control" required>
+                        <div class="invalid-feedback">please enter valid location</div>
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="category" class="form-label fw-bold">Category</label>
+                        <select class="form-select" name="listing[category]" id="category" required>
+                            <option disabled>Select a category</option>
+                            <option value="Trending" <%= list.category === 'Trending' ? 'selected' : '' %>>Trending</option>
+                            <option value="Rooms" <%= list.category === 'Rooms' ? 'selected' : '' %>>Rooms</option>
+                            <option value="Iconic city" <%= list.category === 'Iconic city' ? 'selected' : '' %>>Iconic city</option>
+                            <option value="Mountains" <%= list.category === 'Mountains' ? 'selected' : '' %>>Mountains</option>
+                            <option value="Castles" <%= list.category === 'Castles' ? 'selected' : '' %>>Castles</option>
+                            <option value="Amazing pools" <%= list.category === 'Amazing pools' ? 'selected' : '' %>>Amazing pools</option>
+                            <option value="Camping" <%= list.category === 'Camping' ? 'selected' : '' %>>Camping</option>
+                            <option value="Farms" <%= list.category === 'Farms' ? 'selected' : '' %>>Farms</option>
+                            <option value="Arctic" <%= list.category === 'Arctic' ? 'selected' : '' %>>Arctic</option>
+                            <option value="Domes" <%= list.category === 'Domes' ? 'selected' : '' %>>Domes</option>
+                            <option value="Boats" <%= list.category === 'Boats' ? 'selected' : '' %>>Boats</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-dark">Edit</button>
+                <br>
+            
+        </div>    
+    </div>
+</form>
+
+</body>

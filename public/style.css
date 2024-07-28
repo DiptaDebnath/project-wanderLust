@@ -1,0 +1,140 @@
+body{
+    /* background: rgb(6,228,173); */
+    /* background: linear-gradient(90deg, rgba(6,228,173,0.8016456582633054) 22%, rgba(29,198,170,0.7904411764705882) 58%, rgba(14,191,227,0.7120098039215687) 89%); */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.container{
+    flex: 1;
+}
+ /* navbar */
+.fa-compass{
+    font-size: 2rem;
+    color: #fe424d;
+}
+.card-review{
+    border: none !important;
+    margin-bottom: 2 rem !important;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit: cover;
+    height: 20rem;
+    transition: opacity 2s ease-in-out 0 !important;
+}
+/* .card-img-top:hover{
+    opacity: 0.7 ;
+} */
+
+.card-body{
+    padding: 0 !important;
+
+}
+.card-body p{
+   font-weight: 400 !important;
+    
+}
+i{
+    font-size: 1.5rem;
+}
+
+.contain{
+    row-gap: 0.2 rem !important; 
+    column-gap: 1 rem;
+}
+
+.image{
+    border-radius: 1 rem !important;
+    border: none !important;
+
+}
+
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline !important;
+}
+
+.f-info{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 240, 244);
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+    height: 4rem;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.btns{
+    display: flex;
+}
+
+/* map */
+#map{
+    height: 400px;
+    width: 100vh; 
+}
+
+
+/* category */
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter{
+    text-align: center;
+    margin-right: 2rem;
+    opacity: 0.7;
+    font-size: 0.8rem;
+  }
+  .filter i{
+    cursor: pointer;
+  }
+  .filter:hover{
+    opacity: 1;
+  }
+
+  .gst{
+    margin-left: 0.7rem;
+    font-size: 1rem;
+    display: none;
+  }
+
+  .gstShow{
+    display: inline;
+  }
+  .switch{
+    border: 1px solid black;
+    padding: 0.7rem ;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+  }
+  .widthForm{
+    width: 15rem;
+  }
