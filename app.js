@@ -44,7 +44,7 @@ app.engine('ejs', engine);
 
 
 const sessionOptions ={
-  secret: "thisIsSecret" ,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: { 
@@ -76,7 +76,7 @@ app.use((req,res,next)=>{
 });
 
 // Connection
-mongoose.connect('mongodb://127.0.0.1:27017/wanderlust')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Connected!'))
   .catch((err)=> console.log(err));
 
